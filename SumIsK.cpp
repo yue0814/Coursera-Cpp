@@ -1,29 +1,28 @@
 #include <iostream>
-#include <vector>
-#include <string>
 using namespace std;
-
-int main()
-{
-    int n, k;
+int main() {
+    int n = 0, k = 0;
     cin >> n >> k;
-    int nums[n];
-    vector<int> vec;
-    string s = "no";
-    for (int i = 0; i < n; i++){
-        cin >> nums[i];
-        if (nums[i] <= k)
-            vec.push_back(nums[i]);
+    int a[n];
+    bool b = false;
+    for (int i=0; i<n; i++) {
+        cin >> a[i];
     }
-    for (auto it = vec.begin(); it != vec.end(); it++){
-        for (auto begin = it + 1; begin != vec.end(); begin++){
-            if (*it + *begin == k)
-                s = "yes";
-            else
-                continue;
+    for(int i=0; i<n; i++) {
+        for(int j=i+1; j<n; j++) {
+            if (a[i] + a[j] == k) {
+                cout << "yes" << endl;
+                b = true;
+                break;
+            }
+        }
+        if (b) {
+            break;
         }
     }
-    cout << s << endl;
-    return 0;
+    if (!b) {
+        cout << "no" << endl;
+    }
 
+    return 0;
 }

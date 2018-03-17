@@ -2,32 +2,25 @@
 using namespace std;
 
 int main(){
-    double N;
-    double K;
-    while (cin >> N >> K){
-        double total = 0;
-        double housePrice = 2000000;
-        double increaseRate = K / 100;
-        total += N;
-        if (total * 10000 >= housePrice){
-            cout << 1 << endl;
-            continue;
-        }
-        for (int i = 2; i <= 20; i++){
-            housePrice *= (1 + increaseRate);
-            total += N;
-            if (total * 10000 >= housePrice){
-                cout << i << endl;
+    int N = 0, K = 0;
+    while (cin >> N >> K) {
+        int M = 1;
+        float n = 200, m = 0;
+        int total = N;
+        while (true) {
+            int tmp = 0;
+            m = total / n;
+            if (m >= 1 && M < 21) {
+                    cout << M << endl;
+                    break;
+            } else if (M > 20) {
+                cout << "Impossible" << endl;
                 break;
             }
+            n += n * K/100;
+            total += N;
+            M++;
         }
-        if (total * 10000 < housePrice){
-            cout << "impossible" << endl;
-            continue;
-            }
-        else
-            continue;
-
     }
     return 0;
 }
