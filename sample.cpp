@@ -6,9 +6,7 @@ public:
     int v;
     Sample(int n):v(n) { }
 // 在此处补充你的代码
-    Sample(Sample &a) {
-        this -> v = a.v * 2;
-    }
+    Sample(const Sample &a): v(a.v*2) {}
 
 };
 

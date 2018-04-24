@@ -10,9 +10,9 @@ class A {
 public:
     int val;
 // 在此处补充你的代码
-    A(int n=0) {val = n;}
+    A() {val = 0;}
     int &GetObj(){
-        return this->val;}
+        return val;}
 };
 int main() {
     A a;
