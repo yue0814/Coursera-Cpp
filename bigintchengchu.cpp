@@ -27,7 +27,7 @@ public:
     }
 public:
     friend ostream& operator << (ostream& os, const BigInt& bigInt);//重载输出操作符
-    friend istream& operator>>(istream& is, BigInt& bigInt);//输入操作符重载
+    friend istream& operator >> (istream& is, BigInt& bigInt);//输入操作符重载
     BigInt operator+(const BigInt& rhs);//加法操作重载
     BigInt operator-(const BigInt& rhs);//减法操作重载
     BigInt operator*(const BigInt& rhs);//乘法操作重载
