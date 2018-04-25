@@ -11,7 +11,7 @@ public:
     int val;
 // 在此处补充你的代码
     A() {val = 0;}
-    int &GetObj(){
+    int& GetObj(){
         return val;}
 };
 int main() {
